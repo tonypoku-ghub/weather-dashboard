@@ -1,0 +1,8 @@
+:root {
+  --main-text-color: #1c1c1c;
+  --main-bg-color: #ffffff;
+}
+
+.city-summary {
+  color: var(--main-text-color);
+}
