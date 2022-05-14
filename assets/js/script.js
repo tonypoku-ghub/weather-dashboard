@@ -6,32 +6,41 @@ var weatherURL =
   "https://api.openweathermap.org/data/2.5/weather?q={city}&appid=dff9798285dea32133f4c2c13f702b52";
 
 var uvindexURL =
-  "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=hourly,daily,minutely&appid=dff9798285dea32133f4c2c13f702b52";
+  "https://api.openweathermap.org/data/2.5/onecall?units=standard&lat={lat}&lon={lon}&exclude=hourly,daily,minutely&appid=dff9798285dea32133f4c2c13f702b52";
 
-async function searchWeather() {
+function searchWeather() {
   var searchURL = weatherURL.replace("{city}", searchInputEl.value);
 
-  var response = await fetch(searchURL);
+  fetch(searchURL)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("weather: ");
+      console.log(data);
 
-  var data = await response.json();
-  console.log("weather: ");
-  console.log(data);
+      updateDashboard(data);
 
-  updateDashboard(data);
-
-  logSearchHistory(searchInputEl.value);
+      logSearchHistory(searchInputEl.value);
+    });
 }
 
-async function getUVIndex(lat, lon) {
+function setUVIndex(lat, lon) {
   var searchURL = uvindexURL.replace("{lat}", lat).replace("{lon}", lon);
 
-  var response = await fetch(searchURL);
+  fetch(searchURL)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("One Call: ");
+      console.log(data);
 
-  var data = await response.json();
-  console.log("One Call: ");
-  console.log(data);
+      debugger;
 
-  return JSON.parse(data.current.uvi);
+      var uvindex = data.current.uvi;
+
+      console.log("uvindex: ");
+      console.log(uvindex);
+
+      $("#uvindex").text(uvindex);
+    });
 }
 
 function updateDashboard(data) {
@@ -39,8 +48,7 @@ function updateDashboard(data) {
   $("#wind").text(data.wind.speed + " MPH");
   $("#humidity").text(data.main.humidity + "%");
 
-  var uvindex = getUVIndex(data.coord.lat, data.coord.lon);
-  $("#uvindex").text(uvindex);
+  setUVIndex(data.coord.lat, data.coord.lon);
 }
 
 function logSearchHistory(inputText) {

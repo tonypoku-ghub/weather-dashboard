@@ -13,17 +13,18 @@
     />
     <!-- <link rel="stylesheet" href="assets/css/jass.css" /> -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment-with-locales.min.js"></script>
   </head>
   <body>
     <div
-      class="container border align-center justify-center min-100-vh bg-primary border-top mt-5"
+      class="container border align-center justify-center min-100-vh border-top mt-5"
     >
       <div class="row border">
         <h1 class="bg-primary text-center">Weather Dashboard</h1>
       </div>
       <div class="row border">
-        <div class="col-3 border flex-column align-center bg-light">
-          <div class="flex-d flex-column border">
+        <div class="col-2 border flex-column align-center bg-light">
+          <div class="flex flex-column border">
             <h5>Search for a City:</h5>
             <input id="search-input" class="form-control my-3" type="text" />
             <button id="btn-search" class="btn btn-primary w-100">
@@ -32,11 +33,11 @@
             <div id="search-history" class="d-flex flex-column"></div>
           </div>
         </div>
-        <div class="col-9 border flex-column align-center bg-light">
-          <div class="flex-d flex-column">
+        <div class="col-10 border flex-column align-center bg-light">
+          <div class="d-flex flex-column">
             <div
               id="city-summary"
-              class="flex-d flex-column border city-summary"
+              class="d-flex flex-column border city-summary"
             >
               <h5 id="city_header"></h5>
               <p>Temp: <span id="temp"></span></p>
@@ -46,15 +47,13 @@
             </div>
             <div class="forecast-section">
               <h2 class="5-day-header">5-Day Forecast</h2>
-              <div id="city-5-day" class="flex-d flex-row border">
-                5-day forecast
-              </div>
+              <div id="city-5-day" class="d-flex flex-row border"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script_async.js"></script>
   </body>
 </html>
