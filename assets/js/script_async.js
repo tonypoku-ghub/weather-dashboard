@@ -77,7 +77,7 @@ async function updateDashboard(city, data) {
 
   // Update header with city name
   $("#city_header")
-    .css("font-weight", "bold")
+    //.css("font-weight", "bold")
     .text(city + moment.unix(data.dt).format("(MM/DD/YYYY)"));
 
   // Remove old cards
