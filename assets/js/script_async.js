@@ -52,9 +52,9 @@ async function getUVIndex(lat, lon) {
 async function updateDashboard(city, data) {
   var color_class = "green";
 
-  $("#temp").text(data.main.temp);
+  $("#temp").text(data.main.temp + " °F");
   $("#wind").text(data.wind.speed + " MPH");
-  $("#humidity").text(data.main.humidity + "%");
+  $("#humidity").text(data.main.humidity + " %");
 
   var uvindex = await getUVIndex(data.coord.lat, data.coord.lon);
 

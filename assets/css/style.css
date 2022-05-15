@@ -6,3 +6,13 @@
 .city-summary {
   color: var(--main-text-color);
 }
+
+.banner {
+  color: white;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    30deg,
+    rgba(2, 0, 36, 1) 10%,
+    rgba(75, 83, 232, 1) 100%
+  );
+}
