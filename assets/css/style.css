@@ -7,7 +7,8 @@
   color: var(--main-text-color);
 }
 
-.banner {
+.banner,
+#btn-search {
   color: white;
   background: rgb(2, 0, 36);
   background: linear-gradient(
@@ -15,4 +16,9 @@
     rgba(2, 0, 36, 1) 10%,
     rgba(75, 83, 232, 1) 100%
   );
+}
+
+.card {
+  background-color: rgba(2, 0, 36, 1);
+  color: white;
 }

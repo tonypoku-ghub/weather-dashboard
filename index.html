@@ -17,23 +17,26 @@
   </head>
   <body>
     <div
-      class="container border align-center justify-center min-100-vh border-top mt-5"
+      class="container align-center justify-center min-100-vh border-top mt-5"
     >
-      <div class="row border">
+      <div class="row">
         <h1 class="bg-primary text-center banner">Weather Dashboard</h1>
       </div>
-      <div class="row border">
-        <div class="col-2 border flex-column align-center bg-light">
-          <div class="flex flex-column border">
+      <div class="row">
+        <div class="col-2 flex-column align-center bg-light">
+          <div class="flex flex-column">
             <h5>Search for a City:</h5>
             <input id="search-input" class="form-control my-3" type="text" />
             <button id="btn-search" class="btn btn-primary w-100">
               Search
             </button>
-            <div id="search-history" class="d-flex flex-column"></div>
+            <div
+              id="search-history"
+              class="d-flex flex-column border-top border-secondary pt-2 mt-3"
+            ></div>
           </div>
         </div>
-        <div class="col-10 border flex-column align-center bg-light">
+        <div class="col-10 flex-column align-center bg-light">
           <div class="d-flex flex-column">
             <div
               id="city-summary"
@@ -47,7 +50,7 @@
             </div>
             <div class="forecast-section">
               <h4 class="5-day-header">5-Day Forecast</h4>
-              <div id="city-5-day" class="d-flex flex-row border"></div>
+              <div id="city-5-day" class="d-flex flex-row"></div>
             </div>
           </div>
         </div>

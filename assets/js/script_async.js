@@ -113,15 +113,15 @@ function addWeatherCard(date, temp, wind, humidity, icon) {
     );
 
   var cardTempDiv = $("<div>")
-    .addClass("card-body border")
+    .addClass("card-body")
     .text("Temp: " + temp + " °F");
 
   var cardWindDiv = $("<div>")
-    .addClass("card-body border")
+    .addClass("card-body")
     .text("Wind: " + wind + " MPH");
 
   var cardHumidityDiv = $("<div>")
-    .addClass("card-body border")
+    .addClass("card-body")
     .text("Humidity: " + humidity + " %");
 
   cardDiv.append(
